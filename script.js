@@ -28,7 +28,7 @@ userip();//calling the function manually
 function userdtaip(usersip){//after fetching details from the API endpoint it calls the function "userdtaip()" and displays IP details on screen.
     const cltdata = document.createElement('div');
     cltdata.innerHTML = `
-    <h6 class="paddingh5">Hey...found details of your IP <span class="codetxt">$</span>[<span class="colors">${usersip.ip}</span>] 👇</h6> 
+    <h5 class="paddingh5">Hey...found details of your IP <span class="codetxt">$</span>[<span class="colors">${usersip.ip}</span>] 👇</h5> 
     <div class="container d-flex justify-content-center detailsbox">
         <div class="row p-2 offset-auto">
             <div class="col-6">
@@ -85,8 +85,20 @@ function userdtaip(usersip){//after fetching details from the API endpoint it ca
 function ipquery(event){
     event.preventDefault();
     const searchValue = document.querySelector(".value").value;
-    // console.log(searchValue);
-    fetching(searchValue);
+    const mapdis = document.getElementById("map");
+    const text = document.querySelector("#display");
+    if(searchValue === ""){
+        document.querySelector(".clr").innerHTML =`<h4 class="validatorText">Please enter a input</h4>`;
+        mapdis.style.position = "absolute";
+        mapdis.style.visibility = "hidden";
+        text.style.display = "none";
+    }else{
+        fetching(searchValue);
+        mapdis.style.position = "static";
+        mapdis.style.visibility = "visible";
+        text.style.display = "block";
+        // console.log(searchValue);
+    }
 }
 
 async function fetching(searchValue){//function fetching details from API endpoint by try catch method
@@ -103,8 +115,17 @@ async function fetching(searchValue){//function fetching details from API endpoi
 
 function adrs(ipadrs){//after fetching details from the API endpoint it calls the function "adrs(ipadrs)" and displays IP details on screen.
     const data1 = document.createElement('div');
+    const ipvalidation = `${ipadrs.version}`;
+    if(ipvalidation === "undefined" || typeof ipvalidation === "String"){ //validator to find the entered input if a valid ip address and also checks if it is a string or number type.+
+        document.querySelector(".clr").innerHTML = `<h4 class="validatorText">Please enter a valid IP address</h4>`;
+        const mapdis = document.getElementById("map");
+        const text = document.querySelector("#display");
+        mapdis.style.position = "absolute";
+        mapdis.style.visibility = "hidden";
+        text.style.display = "none";
+    }else{
     data1.innerHTML = `
-    <h6 class="paddingh5">Found details of the IP you asked 😋 <span class="codetxt">$</span>[<span class="colors">${ipadrs.ip}</span>]👇</h6>
+    <h5 class="paddingh5">Found details of the IP you asked 😋 <span class="codetxt">$</span>[<span class="colors">${ipadrs.ip}</span>]👇</h5>
     <div class="container d-flex justify-content-center detailsbox">
        <div class="row p-2">
             <div class="col-6">
@@ -151,10 +172,14 @@ function adrs(ipadrs){//after fetching details from the API endpoint it calls th
           });
     }
     initMap();
-
     document.querySelector(".clr").append(data1);
+    }
+    clrinput();
 }
 
+function clrinput(){
+    document.querySelector(".value").value = "";
+}
 
 //footer details
 const footing = document.querySelector('.bottom');
