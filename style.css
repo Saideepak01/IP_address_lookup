@@ -121,6 +121,10 @@ footer {
     text-align: center;
     padding: 1rem;
 }
+.validatorText{
+    text-align: center;
+    margin-top: 5rem;
+}
 @media(max-width: 415px){
     form{
         width: 100%;
