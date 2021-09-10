@@ -1,0 +1,137 @@
+body{
+    background-color: #31233C;
+    color: white;
+    min-height: 100vh;
+    font-family: 'Kaisei Decol', serif;
+}
+.gradient{
+    font-family: 'Kaisei Decol', serif;
+    font-weight: 700;
+    padding: 1rem;
+    background-image: linear-gradient(92deg, #f35626, #feab3a);
+    background-clip: text;
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    animation: hue 10s infinite linear;
+	-webkit-animation: hue 10s infinite linear;
+}
+.colors{
+    background: rgb(207,181,85);
+    background: linear-gradient(67deg, rgba(207,181,85,0.7598389697675946) 30%, rgba(85,207,203,0.7598389697675946) 52%, rgba(255,144,144,1) 100%);
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+.paddingh5{
+    padding: 1rem;
+}
+.codetxt{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+strong, b{
+    text-decoration: underline;
+}
+.strike{
+    text-decoration: none;
+}
+.revert{
+    text-decoration: none;
+    background: rgb(85,194,207);
+    background: linear-gradient(67deg, rgba(85,194,207,0.7598389697675946) 2%, rgba(85,194,207,0.7598389697675946) 7%, rgba(144,255,213,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+form{
+    width: 50%;
+}
+.mark{
+    background-color: white;
+    border-radius: 50px;
+
+}
+.detailsbox{
+    border: 1px solid white;
+    border-radius: 8px;
+    margin: auto;
+    font-family: 'Kaisei Decol', serif;
+    overflow: auto;
+}
+.value{
+    border-radius: 50px;
+    /* width: 50px; */
+}
+.value::-webkit-input-placeholder, .labeltxt, .mark, .ipdntknw{
+    font-family: 'Kaisei Decol', serif;
+}
+.btm{
+    font-family: 'Work Sans', sans-serif;
+}
+.footingbg{
+    background-image: linear-gradient(92deg, #f35626, #feab3a);
+    background-clip: text;
+	-webkit-background-clip: text;
+    -moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    animation: hue 10s infinite linear;
+	-webkit-animation: hue 10s infinite linear;
+    -moz-animation: hue 10s infinite linear;
+}
+footer {
+    position: sticky;
+    top: 100%;
+    padding: 1rem;
+    text-align: center;
+
+}
+.srdown{
+    text-align: center;
+    padding: 5rem;
+}
+@keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+}
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+    to {
+      -webkit-filter: hue-rotate(-360deg);
+    }
+}
+#map{
+    height: 300px;
+    border-radius: 8px;
+    width: 30rem;
+    margin-top: 1rem;
+}
+.loccenter{
+    text-align: center;
+    padding: 1rem;
+}
+@media(max-width: 415px){
+    form{
+        width: 100%;
+    }
+    .gradient{
+        font-size: 25px;
+    }
+    #map{
+        width: auto;
+    }
+    input::placeholder{
+        font-size: small;
+    }
+}
