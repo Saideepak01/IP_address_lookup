@@ -10,7 +10,7 @@ pagedisplay.innerHTML = `
             </form>
         </div>
     </div>
-    `;//searchbox and title design
+    `;//searchbox and title component
 
 
 async function userip(){//function fetching details from API endpoint by try catch method
@@ -87,7 +87,7 @@ function ipquery(event){
     const searchValue = document.querySelector(".value").value;
     const mapdis = document.getElementById("map");
     const text = document.querySelector("#display");
-    if(searchValue === ""){
+    if(searchValue === ""){ //validating if the input contains some input or is it blank
         document.querySelector(".clr").innerHTML =`<h4 class="validatorText">Please enter a input</h4>`;
         mapdis.style.position = "absolute";
         mapdis.style.visibility = "hidden";
@@ -177,6 +177,7 @@ function adrs(ipadrs){//after fetching details from the API endpoint it calls th
     clrinput();
 }
 
+//clears the input textbox after searching the ip address
 function clrinput(){
     document.querySelector(".value").value = "";
 }
